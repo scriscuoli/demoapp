@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table w-auto">
+        
+        <tbody>
+            <tr><th>Host</th><td>{{ config['host'] }}</td></tr>
+            <tr><th>Database</th><td>{{ config['database'] }}</td></tr>
+            <tr><th>User</th><td>{{ config['user'] }}</td></tr>
+            <tr><th>Password</th><td>{{ config['passwd'] }}</td></tr>
+        </tbody>
+    </table>
+{% endblock %}

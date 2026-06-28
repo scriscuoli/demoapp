@@ -1,0 +1,21 @@
+-- Create the database
+CREATE DATABASE finance;
+CREATE USER 'finance'@'%' IDENTIFIED BY '!QAZ2wsx#EDC4rfv';
+GRANT ALL PRIVILEGES ON finance.* TO 'finance'@'%';
+FLUSH PRIVILEGES;
+
+CREATE DATABASE ncd;
+CREATE USER 'ncd'@'%' IDENTIFIED BY '!QAZ2wsx#EDC4rfv';
+GRANT ALL PRIVILEGES ON ncd.* TO 'ncd'@'%';
+FLUSH PRIVILEGES;
+
+CREATE DATABASE collection;
+CREATE USER 'collection'@'%' IDENTIFIED BY '!QAZ2wsx#EDC4rfv';
+GRANT ALL PRIVILEGES ON collection.* TO 'collection'@'%';
+FLUSH PRIVILEGES;
+
+CREATE DATABASE accounts;
+CREATE USER 'accounts'@'%' IDENTIFIED BY 'SpenceR315!!';
+GRANT ALL PRIVILEGES ON accounts.* TO 'accounts'@'%';
+FLUSH PRIVILEGES;
+

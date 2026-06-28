@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <form action="" method="POST">
+        
+        {{ form.hidden_tag() }}
+        
+        <p>
+            {{ form.username.label }} {{ form.username(size=20) }}
+        </p>
+        <p>
+            {{ form.password.label }} {{ form.password(size=20) }}
+        </p>
+        <p>
+            {{ form.passwordAgain.label }} {{ form.passwordAgain(size=20) }}
+        </p>
+        <p>
+            {{ form.submit() }} <br>
+        </p>
+    </form>
+    <script>
+        const p1Input = document.getElementById('password');
+        const p2Input = document.getElementById('passwordAgain');
+        const submitButton = document.getElementById('submit');
+
+        function validatePasswords() {
+            const p1Value = p1Input.value;
+            const p2Value = p2Input.value;
+
+            // Check if passwords match and are at least 6 characters long
+            if (p1Value === p2Value && p1Value.length >= 6) {
+                submitButton.disabled = false; // Enable the button
+            } else {
+                submitButton.disabled = true; // Disable the button
+            }
+        }
+
+        // Add event listeners to both input fields
+        p1Input.addEventListener('input', validatePasswords);
+        p2Input.addEventListener('input', validatePasswords);
+    </script>
+    
+{% endblock %}

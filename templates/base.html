@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light"> <head>
+        <meta charset="UTF-8">
+        <title>{{tvals.title}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/static/images/demo.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+        </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/DemoApp"><img src="/static/images/demo.png" class="img-fluid" style="max-height: 30px;"/>&nbsp;{{ tvals.site }}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if tvals.name  == "admin" %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Administration
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/DemoApp/admin/addUser">Add User</a></li>
+                    <li><a class="dropdown-item" href="/DemoApp/admin/userList">User List</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/DemoApp/admin/db_details">Database Details</a></li>
+                    <li><a class="dropdown-item" href="/DemoApp/admin/export_db">Export Database</a></li>
+                  </ul>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link" href="/DemoApp/about">About this Site</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <button class="btn btn-sm btn-outline-secondary mt-1 me-2" id="darkModeToggle">Toggle Dark Mode</button>
+                </li>
+                {% if tvals.name  != None %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ tvals.name }}
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-start dropdown-menu-md-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="/DemoApp/user/updatePassword/{{ session['id'] }}">Update Password</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/DemoApp/logout">Log Out</a></li>
+                  </ul>
+                </li>
+                {% endif %}
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid mx-3">
+          <h4>{{ tvals.pageTitle }}</h4>
+          <p> {{ tvals.pageDescription }} </p>
+          {% for mesg in get_flashed_messages() %}
+          <h3>{{ mesg }}</h3>
+          {% endfor %}
+          {% block content %}{% endblock %}
+        </div>
+                
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                const htmlElement = document.documentElement; // This targets the <html> tag
+
+                // Function to set the theme
+                function setTheme(theme) {
+                    htmlElement.setAttribute('data-bs-theme', theme);
+                    localStorage.setItem('bs-theme', theme); // Store preference using 'bs-theme' key
+                }
+
+                // Check for saved theme preference on page load
+                const savedTheme = localStorage.getItem('bs-theme');
+                if (savedTheme) {
+                    setTheme(savedTheme);
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    // Check OS preference if no theme is saved
+                    setTheme('dark');
+                } else {
+                    setTheme('light'); // Default to light if no preference
+                }
+
+                // Toggle theme on button click
+                darkModeToggle.addEventListener('click', () => {
+                    if (htmlElement.getAttribute('data-bs-theme') === 'light') {
+                        setTheme('dark');
+                    } else {
+                        setTheme('light');
+                    }
+                });
+            });
+        </script>
+      </body>
+</html>

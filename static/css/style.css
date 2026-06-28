@@ -1,0 +1,13 @@
+/* main style shee for the web front end */
+
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensures it takes full navbar height */
+}
+
+.navbar-brand img {
+    max-height: 30px;
+    width: auto;
+}

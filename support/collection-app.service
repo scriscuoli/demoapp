@@ -1,0 +1,17 @@
+[Unit]
+Description=Flask Collection App
+After=network.target
+
+[Service]
+User=sdcrisc
+Group=www-data
+WorkingDirectory=/opt/apps/flask_collection
+Environment="PATH=/opt/apps/flask_collection/venv/bin"
+ExecStart=/opt/apps/flask_collection/venv/bin/gunicorn --workers 3 --bind 0.0.0.0:5001 wsgi:app
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <form action="" method="POST">
+        
+        {{ form.hidden_tag() }}
+        <h4>Are you sure you want to delete {{ deleteName }} ?</h4>
+       
+        <p>
+            {{ form.yes() }}   {{ form.no() }}<br>
+        </p>
+    </form>
+    
+{% endblock %}

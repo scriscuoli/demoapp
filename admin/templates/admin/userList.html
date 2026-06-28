@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Password</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row["id"]}}</td>
+                <td>{{ row["user"]}}</td>
+                <td>{{ row["pass"]}}</td>
+                <td>
+                    {% if row["user"]  != "admin" %}
+                    <a class="btn btn-primary btn-sm" href="/DemoApp/admin/renameUser/{{ row['id']}}" >Rename</a>
+                    
+                    <a class="btn btn-primary btn-sm" href="/DemoApp/admin/userPasswordReset/{{ row['id']}}" >Reset</a>
+                    <a class="btn btn-danger btn-sm" href="/DemoApp/admin/deleteUser/{{ row['id']}}" >Delete</a>
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
