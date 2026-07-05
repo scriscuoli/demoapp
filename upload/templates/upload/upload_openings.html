@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h5>Openings</h5>
+<form action="/DemoApp/upload/handleOpenings" method="post" class="dropzone" id="myOpeningDropzone"
+        enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+</form>
+
+{% endblock %}
