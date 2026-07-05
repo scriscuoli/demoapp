@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <h5>Resumes</h5>
+<ul>
+{% for r in resumes %}
+    <li><a target="_blank" href="/static/images/resumes/{{ r }}">{{ r }}</a></li>
+{% endfor %}
+</ul>
 <form action="/DemoApp/upload/handleResumes" method="post" class="dropzone" id="myResumeDropzone"
         enctype="multipart/form-data">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>

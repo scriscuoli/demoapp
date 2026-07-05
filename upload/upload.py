@@ -1,8 +1,8 @@
 from flask import Blueprint,render_template,redirect,session,request,current_app
 import util
 import os
+from pathlib import Path
 
-import os
 
 RESUMES_FOLDER = os.path.join("static", "images", "resumes")
 OPENINGS_FOLDER = os.path.join("static", "images", "openings")
@@ -24,7 +24,10 @@ def show_upload_resumes():
         "pageTitle": "",
         "pageDescription": ""
     }
-    return render_template('upload/upload_resumes.html',tvals=tvals)
+
+    resumes = [f.name for f in Path(RESUMES_FOLDER).iterdir() if f.is_file()]
+
+    return render_template('upload/upload_resumes.html',resumes=resumes,tvals=tvals)
 
 @upload_bp.route('/openings')
 def show_upload_openings():
@@ -38,7 +41,9 @@ def show_upload_openings():
         "pageTitle": "",
         "pageDescription": ""
     }
-    return render_template('upload/upload_openings.html',tvals=tvals)
+    openings = [f.name for f in Path(OPENINGS_FOLDER).iterdir() if f.is_file()]
+
+    return render_template('upload/upload_openings.html',openings=openings,tvals=tvals)
 
 @upload_bp.route('/handleResumes', methods=['POST'])
 def show_upload_handle_resumes():
