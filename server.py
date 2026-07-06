@@ -37,6 +37,7 @@ from home.home import home_bp
 from auth.auth import  auth_bp
 from user.user import user_bp
 from upload.upload import upload_bp
+from dnd.dnd import dnd_bp
 
 # blueprints
 app.register_blueprint(about_bp,url_prefix='/DemoApp/about')
@@ -45,6 +46,7 @@ app.register_blueprint(home_bp,url_prefix='/DemoApp')
 app.register_blueprint(auth_bp,url_prefix='/DemoApp')
 app.register_blueprint(user_bp,url_prefix="/DemoApp/user")
 app.register_blueprint(upload_bp,url_prefix="/DemoApp/upload")
+app.register_blueprint(dnd_bp,url_prefix="/DemoApp/dnd")
 
 
 @app.errorhandler(CSRFError)

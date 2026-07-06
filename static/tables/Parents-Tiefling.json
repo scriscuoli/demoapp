@@ -1,0 +1,10 @@
+{
+    "title": "Parents of a Tiefling: ",
+    "roll" : "1d8",
+    "choices": [
+        {"from": 1, "to": 4, "text": "Both parents were humans, their infernal heritage dormant until you came along."},
+        {"from": 5, "to": 6, "text": "One parent was a tiefling and the other was a human."},
+        {"from": 7, "to": 7, "text": "One parent was a tiefling and the other was a devil."},
+        {"from": 8, "to": 8, "text": "One parent was a human and the other was a devil."}
+    ]
+}

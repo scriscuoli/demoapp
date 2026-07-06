@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h5>D&D Character Backstory Generator</h5>
+
+    <form action="" method="POST">
+        
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.race.label }} {{ form.race() }}
+        </p>
+        <p>
+            {{  form.clazz.label }} {{ form.clazz() }}
+        </p>
+        <p>
+            {{ form.submit() }} <br>
+        </p>
+    </form>
+
+    <h4>{{ backstory['title'] }}</h4>
+    <pre>
+        {{ backstory['parents'] }}
+        {{ backstory['birthplace'] }}
+    </pre>
+
+{% endblock %}

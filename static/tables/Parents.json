@@ -1,0 +1,8 @@
+{
+    "title": "Your Parents: ",
+    "roll" : "1d100",
+    "choices": [
+        {"from": 1, "to": 95, "text": "You knew your parents."},
+        {"from": 96, "to": 100, "text": "You did not know your parents."}
+    ]
+}
