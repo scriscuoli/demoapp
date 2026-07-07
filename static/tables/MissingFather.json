@@ -1,0 +1,10 @@
+{
+    "title": "Your Father ",
+    "roll" : "1d4",
+    "choices": [
+        {"from": 1, "to": 1, "text": "died. ", "goto": "CauseOfDeath"},
+        {"from": 2, "to": 2, "text": "was imprisoned, enslaved, or otherwise taken away. "},
+        {"from": 3, "to": 3, "text": "abandoned you. "},
+        {"from": 4, "to": 4, "text": "disappeared to an unknown fate. "}
+    ]
+}

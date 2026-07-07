@@ -1,0 +1,17 @@
+{
+        "title": "You were raised ",
+        "roll": "1d100",
+        "choices": [
+                {"from":1, "to": 1, "text": "by no one. "},
+                {"from":2, "to": 2, "text": "in and institution, such as an asylum. "},
+                {"from":3, "to": 3, "text": "in a temple. "},
+                {"from":4, "to": 5, "text": "in an orphanage. "},
+                {"from":6, "to": 7, "text": "by a guardian. "},
+                {"from":8, "to": 15, "text": "by a paternal or maternal aunt, uncle, or both; or extended family such as a tribe or clan. "},
+                {"from":16, "to": 25, "text": "by paternal or maternal grandparent(s). "},
+                {"from":26, "to": 35, "text": "by an adoptive family (same or different race). "},
+                {"from":36, "to": 55, "text": "by a single Father or Stepfather. ","goto": "MissingMother"},
+                {"from":56, "to": 75, "text": "by a single Mother or Stepmother. ","goto": "MIssingFather"},
+                {"from":76, "to": 100, "text": "by a Mother and Father. "}
+        ]
+}

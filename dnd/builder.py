@@ -7,6 +7,13 @@ import re
 
 TABLES_FOLDER = os.path.join("static", "tables")
 
+def get_manifest():
+    rtn = []
+    mtxtf = os.path.join(TABLES_FOLDER,"manifest.txt")
+    with open(mtxtf, 'r') as f:
+        return [line.rstrip('\n\r') for line in f]
+    return rtn
+
 def find_table(title:str, race:str, clazz:str):
     rtn = {}
     # closest match is title-class-race.json
@@ -55,15 +62,34 @@ def roll_dice(notation):
     return rtn
 
 
+def process_text(entry:dict):
+    def replace_match(match):
+        keyword = match.group(1)
+        if keyword in entry:
+            value = entry[keyword]
+            if isinstance(value, str) and re.fullmatch(r'\d*d\d+([+-]\d+)?', value):
+                value = roll_dice(value)['total']
+            return str(value)
+        return match.group(0)
+    pattern = r'<(\w+)>'
+    return re.sub(pattern, replace_match, entry["text"])
+
+
 def roll_table(tableName:str, race:str, clazz:str):
-    rtn = ""
-    table = table = find_table(tableName,race,clazz)
+    print(f"roll_table({tableName}, {race}, {clazz})")
+    rtn = {"title":"","text":"","dice":{}}
+    table = find_table(tableName,race,clazz)
     if table != {} :
         mydice = roll_dice(table['roll'])
         myroll = mydice["total"]
         for c in table['choices']:
             if c['from'] <= myroll and c['to'] >= myroll:
-                rtn = f"{table['title']} {c['text']}"
+                txt = process_text(c)
+                if "goto" in c:
+                    tbl = c['goto']
+                    gtr = roll_table(tbl,race,clazz)
+                    txt = f"{txt} {gtr['title']} {gtr['text']}"
+                rtn = {"title":table['title'],"text":txt,"dice":mydice}
     return rtn
 
 
@@ -71,8 +97,9 @@ def roll_table(tableName:str, race:str, clazz:str):
 def build_back_story(race:str, clazz:str):
     rtn = {}
     rtn['title'] = f"The back story of your {race} {clazz}"
-    rtn['parents'] = roll_table("Parents",race,clazz)
-    rtn['birthplace'] = roll_table("Birthplace",race,clazz)
+    manifest = get_manifest()
+    for m in manifest:
+        rtn[m] = roll_table(m,race,clazz)
         
 
     return rtn
