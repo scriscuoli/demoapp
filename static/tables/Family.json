@@ -3,7 +3,7 @@
         "roll": "1d100",
         "choices": [
                 {"from":1, "to": 1, "text": "by no one. "},
-                {"from":2, "to": 2, "text": "in and institution, such as an asylum. "},
+                {"from":2, "to": 2, "text": "in an institution, such as an asylum. "},
                 {"from":3, "to": 3, "text": "in a temple. "},
                 {"from":4, "to": 5, "text": "in an orphanage. "},
                 {"from":6, "to": 7, "text": "by a guardian. "},
