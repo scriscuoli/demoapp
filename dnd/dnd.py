@@ -3,7 +3,7 @@ import util
 import os
 from pathlib import Path
 from dnd.forms import BackstoryForm
-from dnd.builder import build_back_story
+from dnd.builder import build_back_story,get_manifest
 
 
 
@@ -25,11 +25,13 @@ def show_dnd():
     }
     form = BackstoryForm()
     backstory = {}
+    manifest = get_manifest()
     if request.method == "POST":
         race = request.form.get("race")
         clazz = request.form.get("clazz")
         print(f"race={race}  class={clazz}")
         backstory = build_back_story(race,clazz=clazz)
+        print(manifest)
         print(backstory)
-    return render_template('dnd/dnd.html',form=form,tvals=tvals,backstory=backstory)
+    return render_template('dnd/dnd.html',form=form,tvals=tvals,manifest=manifest,backstory=backstory)
 

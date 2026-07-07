@@ -1,17 +1,18 @@
 {
-    "title": "They ",
+    "title": "They",
     "roll" : "1d12",
     "choices": [
         {"from": 1, "to": 1, "text": "died of unknown cause."},
         {"from": 2, "to": 2, "text": "were murdered."},
         {"from": 3, "to": 3, "text": "were killed in battle."},
         {"from": 4, "to": 4, "text": "died from a workplace accident."},
-        {"from": 5, "to": 5, "text": "died from accidentally."},
-        {"from": 6, "to": 7, "text": "died of natural causes, such as age or disease."},
+        {"from": 5, "to": 5, "text": "died accidentally."},
+        {"from": 6, "to": 7, "text": "died of natural causes, <cause>", "cause": ["succombing to old age. ", "succombing to disease. "] },
         {"from": 8, "to": 8, "text": "died from an apparent suicide."},
-        {"from": 9, "to": 9, "text": "were torn apart by an animal or a natural disaster"},
+        {"from": 9, "to": 9, "text": "<nature>","nature": ["were torn apart by an animal. "," died during a natural disaster. "]},
         {"from": 10, "to": 10, "text": "were consumed by a monster."},
-        {"from": 11, "to": 11, "text": "were executed for a crime or tortured to death."},
-        {"from": 12, "to": 12, "text": "died in a bizarre event, such as being hit by a meteorite, struck down by an angry god, or killed by a hatching slaad egg."}
+        {"from": 11, "to": 11, "text": "<punished>", "punished": ["were executed for a crime. ","were tortured to death."]},
+        {"from": 12, "to": 12, "text": "died in a bizarre event. <bizarre>", 
+                    "bizarre": ["They were hit by a meteorite. ","They were struck down by an angry god. ","They were killed by a hatching slaad egg. "]}
     ]
 }

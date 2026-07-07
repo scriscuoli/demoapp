@@ -1,5 +1,5 @@
 {
-    "title": "Parents of a Tiefling: ",
+    "title": "Parents of a Tiefling:",
     "roll" : "1d8",
     "choices": [
         {"from": 1, "to": 4, "text": "Both parents were humans, their infernal heritage dormant until you came along."},

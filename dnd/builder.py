@@ -61,6 +61,10 @@ def roll_dice(notation):
     print(f"my roll {rtn['total']}")
     return rtn
 
+def randrom_select_from_list(mylist:list):
+    mll = len(mylist)
+    idx = random.randrange(mll)
+    return mylist[idx]
 
 def process_text(entry:dict):
     def replace_match(match):
@@ -69,6 +73,8 @@ def process_text(entry:dict):
             value = entry[keyword]
             if isinstance(value, str) and re.fullmatch(r'\d*d\d+([+-]\d+)?', value):
                 value = roll_dice(value)['total']
+            elif type(value) is list:
+                value = randrom_select_from_list(value)
             return str(value)
         return match.group(0)
     pattern = r'<(\w+)>'

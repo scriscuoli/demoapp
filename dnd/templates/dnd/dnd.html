@@ -19,10 +19,9 @@
     <h4>{{ backstory['title'] }}</h4>
     <pre>
         {% if backstory != {} %}
-        {{ backstory['Parents']['title']}} {{backstory['Parents']['text']}}
-        {{ backstory['Birthplace']['title']}} {{backstory['Birthplace']['text']}}
-        {{ backstory['Siblings']['title']}} {{backstory['Siblings']['text']}}
-        {{ backstory['Family']['title']}} {{backstory['Family']['text']}}
+            {% for key in manifest %}
+                {{ backstory[key]['title']}} {{backstory[key]['text']}}
+            {% endfor %}
         {% endif %}
     </pre>
 
