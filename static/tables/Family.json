@@ -11,7 +11,7 @@
                 {"from":16, "to": 25, "text": "by paternal or maternal grandparent(s). "},
                 {"from":26, "to": 35, "text": "by an adoptive family (same or different race). "},
                 {"from":36, "to": 55, "text": "by a single Father or Stepfather. ","goto": "MissingMother"},
-                {"from":56, "to": 75, "text": "by a single Mother or Stepmother. ","goto": "MIssingFather"},
+                {"from":56, "to": 75, "text": "by a single Mother or Stepmother. ","goto": "MissingFather"},
                 {"from":76, "to": 100, "text": "by a Mother and Father. "}
         ]
 }
