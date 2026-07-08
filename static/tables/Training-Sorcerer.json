@@ -1,0 +1,14 @@
+{
+    "title": "I became a sorcerer because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "when I was born, all the water in the house froze solid, the milk spoiled, or all the iron turned to copper. My family is convinced that this event was a harbinger of stranger things to come for me. "},
+        {"from": 2, "to": 2, "text": "I suffered a terrible emotional or physical strain, which brought forth my latent magical power. I have fought to control it ever since. "},
+        {"from": 3, "to": 3, "text": "my immediate family never spoke of my ancestors, and when I asked, they would change the subject. It wasn’t until I started displaying strange talents that the full truth of my heritage came out. "},
+        {"from": 4, "to": 4, "text": "when a monster threatened one of my friends, I became filled with anxiety. I lashed out instinctively and blasted the wretched thing with a force that came from within me. "},
+        {"from": 5, "to": 5, "text": "sensing something special in me, a stranger taught me how to control my gift. "},
+        {"from": 6, "to": 6, "text": "after I escaped from a magical conflagration, I realized that though I was unharmed, I was not unchanged. I began to exhibit unusual abilities that I am just beginning to understand. "}
+        
+    ]
+}
+

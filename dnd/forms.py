@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, SelectField
+from wtforms import StringField, IntegerField, SubmitField, SelectField
 from flask_wtf.file import DataRequired
-from werkzeug.utils import secure_filename
+from wtforms.validators import InputRequired, NumberRange
 import os
 
 class BackstoryForm(FlaskForm):
@@ -20,7 +20,6 @@ class BackstoryForm(FlaskForm):
         validators=[DataRequired()])
     clazz = SelectField('Class', 
         choices=[
-            ("Artificer", "Artificer"),
             ("Barbarian", "Barbarian"),
             ("Bard", "Bard"),
             ("Cleric", "Cleric"),
@@ -35,4 +34,8 @@ class BackstoryForm(FlaskForm):
             ("Wizard", "Wizard")
         ],
         validators=[DataRequired()])
+    cha = IntegerField('CHA Modifier', validators=[
+        InputRequired(message="This field is required."),
+        NumberRange(min=-5, max=30, message="Charisma modifier should be between -5 and 30.")
+    ])
     submit = SubmitField('Submit')

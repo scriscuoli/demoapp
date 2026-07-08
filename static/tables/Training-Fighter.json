@@ -1,0 +1,14 @@
+{
+    "title": "I became a fighter because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "I wanted to hone my combat skills, and so I joined a war college. "},
+        {"from": 2, "to": 2, "text": "I squired for a knight who taught me how to fight, care for a steed, and conduct myself with honor. I decided to take up that path for myself. "},
+        {"from": 3, "to": 3, "text": "horrible monsters descended on my community, killing someone I loved. I took up arms to destroy those creatures and others of a similar nature. "},
+        {"from": 4, "to": 4, "text": "I joined the army and learned how to fight as part of a group. "},
+        {"from": 5, "to": 5, "text": "I grew up fighting, and I refined my talents by defending myself against people who crossed me. "},
+        {"from": 6, "to": 6, "text": "I could always pick up just about any weapon and know how to use it effectively. "}
+        
+    ]
+}
+

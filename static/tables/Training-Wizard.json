@@ -1,0 +1,14 @@
+{
+    "title": "I became a wizard because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "an old wizard chose me from among several candidates to serve an apprenticeship. "},
+        {"from": 2, "to": 2, "text": "when I became lost in a forest, a hedge wizard found me, took me in, and taught me the rudiments of magic. "},
+        {"from": 3, "to": 3, "text": "I grew up listening to tales of great wizards and knew I wanted to follow their path. I strove to be accepted at an academy of magic and succeeded. "},
+        {"from": 4, "to": 4, "text": "one of my relatives was an accomplished wizard who decided I was smart enough to learn the craft. "},
+        {"from": 5, "to": 5, "text": "while exploring <place>, I found a spellbook. I was immediately driven to learn all I could about becoming a wizard. ","place": ["an old tomb","a library","a temple"]},
+        {"from": 6, "to": 6, "text": "I was a prodigy who demonstrated mastery of the arcane arts at an early age. When I became old enough to set out on my own, I did so to learn more magic and expand my power. "}
+        
+    ]
+}
+

@@ -1,0 +1,14 @@
+{
+    "title": "I became a ranger because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "I found purpose while I honed my hunting skills by bringing down dangerous animals at the edge of civilization. "},
+        {"from": 2, "to": 2, "text": "I always had a way with animals, able to calm them with a soothing word and a touch. "},
+        {"from": 3, "to": 3, "text": "I suffer from terrible wanderlust, so being a ranger gave me a reason not to remain in one place for too long. "},
+        {"from": 4, "to": 4, "text": "I have seen what happens when the monsters come out from the dark. I took it upon myself to become the first line of defense against the evils that lie beyond civilization’s borders. "},
+        {"from": 5, "to": 5, "text": "I met a grizzled ranger who taught me woodcraft and the secrets of the wild lands. "},
+        {"from": 6, "to": 6, "text": "I served in an army, learning the precepts of my profession while blazing trails and scouting enemy encampments. "}
+        
+    ]
+}
+

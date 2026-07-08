@@ -1,0 +1,14 @@
+{
+    "title": "I became a paladin because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "a fantastical being appeared before me and called on me to undertake a holy quest. "},
+        {"from": 2, "to": 2, "text": "one of my ancestors left a holy quest unfulfilled, so I intend to finish that work. "},
+        {"from": 3, "to": 3, "text": "the world is a dark and terrible place. I decided to serve as a beacon of light shining out against the gathering shadows. "},
+        {"from": 4, "to": 4, "text": "I served as a paladin’s squire, learning all I needed to swear my own sacred oath. "},
+        {"from": 5, "to": 5, "text": "evil must be opposed on all fronts. I feel compelled to seek out wickedness and purge it from the world. "},
+        {"from": 6, "to": 6, "text": "becoming a paladin was a natural consequence of my unwavering faith. In taking my vows, I became the holy sword of my religion. "}
+        
+    ]
+}
+

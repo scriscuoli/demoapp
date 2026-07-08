@@ -1,0 +1,15 @@
+{
+        "title": "Childhood Memories: ",
+        "roll": "3d6",
+        "table_mod": "CHA",
+        "choices": [
+                {"from":-100, "to": 3, "text": "I am still haunted by my childhood, when I was treated badly by my peers. "},
+                {"from":4, "to":5, "text": "I spent most of my childhood alone, with no close friends. "},
+                {"from":6, "to": 8, "text": "Others saw me as being different or strange, and so I had few companions. "},
+                {"from":9, "to": 12, "text": "I had a few close friends and lived an ordinary childhood"},
+                {"from":13, "to": 15, "text": "I had several friends, and my childhood was generally a happy one. "},
+                {"from":16, "to": 17, "text": "I always found it easy to make friends, and I loved being around people. "},
+                {"from":18, "to": 500, "text": "Everyone knew who I was, and I had friends everywhere I went. "}
+                
+        ]
+}

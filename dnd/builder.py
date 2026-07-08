@@ -85,10 +85,10 @@ class Builder:
         return re.sub(pattern, replace_match, entry["text"])
 
 
-    def roll_table(self,tableName:str, race:str, clazz:str):
-        print(f"roll_table({tableName}, {race}, {clazz})")
+    def roll_table(self,tableName:str, params:dict):
+        print(f"roll_table({tableName}, {params['race']}, {params['clazz']})")
         rtn = {"title":"","text":"","dice":{}}
-        table = self.find_table(tableName,race,clazz)
+        table = self.find_table(tableName,params['race'],params['clazz'])
         if table != {} :
             table_mod_value = 0
             mydice = self.roll_dice(table['roll'])
@@ -98,11 +98,6 @@ class Builder:
                     table_mod_value = self.vars[table_mod]
             myroll = mydice["total"] + table_mod_value
             mydice["table_mod_value"] = table_mod_value
-            #print("--------------------")
-            #print(mydice)
-            #print(f"myroll={myroll}, table_mod_value={table_mod_value}")
-            #print("--------------------")
-
             for c in table['choices']:
                 if c['from'] <= myroll and c['to'] >= myroll:
                     txt = self.process_text(c)
@@ -110,19 +105,20 @@ class Builder:
                         self.set_vars(c['vars'])
                     if "goto" in c:
                         tbl = c['goto']
-                        gtr = self.roll_table(tbl,race,clazz)
+                        gtr = self.roll_table(tbl,params)
                         txt = f"{txt} {gtr['title']} {gtr['text']}"
                     rtn = {"title":table['title'],"text":txt,"dice":mydice}
         return rtn
 
 
 
-    def build_back_story(self,race:str, clazz:str):
+    def build_back_story(self,params:dict):
         rtn = {}
-        rtn['title'] = f"The back story of your {race} {clazz}"
+        rtn['title'] = f"The back story of your {params['race']} {params['clazz']}"
+        self.vars["CHA"] = int(params['cha'])
         manifest = self.get_manifest()
         for m in manifest:
-            rtn[m] = self.roll_table(m,race,clazz)
+            rtn[m] = self.roll_table(m,params)
             
 
         return rtn

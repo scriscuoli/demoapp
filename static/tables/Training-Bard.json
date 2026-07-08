@@ -1,0 +1,14 @@
+{
+    "title": "I became a bard because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "I awakened my latent bardic abilities through trial and error. "},
+        {"from": 2, "to": 2, "text": "I was a gifted performer and attracted the attention of a master bard who schooled me in the old techniques. "},
+        {"from": 3, "to": 3, "text": "I joined a loose society of scholars and orators to learn new techniques of performance and magic. "},
+        {"from": 4, "to": 4, "text": "I felt a calling to recount the deeds of champions and heroes, to bring them alive in song and story. "},
+        {"from": 5, "to": 5, "text": "I joined one of the great colleges to learn old lore, the secrets of magic, and the art of performance. "},
+        {"from": 6, "to": 6, "text": "I picked up a musical instrument one day and instantly discovered that I could play it. "}
+        
+    ]
+}
+

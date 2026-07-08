@@ -30,8 +30,11 @@ def show_dnd():
     if request.method == "POST":
         race = request.form.get("race")
         clazz = request.form.get("clazz")
+        cha = request.form.get("cha")
+
         print(f"race={race}  class={clazz}")
-        backstory = builder.build_back_story(race,clazz)
+        params = {"race":race, "clazz": clazz, "cha": cha}
+        backstory = builder.build_back_story(params)
         print(manifest)
         print(backstory)
     return render_template('dnd/dnd.html',form=form,tvals=tvals,manifest=manifest,backstory=backstory)

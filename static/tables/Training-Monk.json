@@ -1,0 +1,13 @@
+{
+    "title": "I became a monk because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "I was chosen to study at a secluded monastery. There, I was taught the fundamental techniques required to eventually master a tradition. "},
+        {"from": 2, "to": 2, "text": "I sought instruction to gain a deeper understanding of existence and my place in the world. "},
+        {"from": 3, "to": 3, "text": "I stumbled into a portal to the Shadowfell and took refuge in a strange monastery, where I learned how to defend myself against the forces of darkness. "},
+        {"from": 4, "to": 4, "text": "I was overwhelmed with grief after losing someone close to me, and I sought the advice of philosophers to help me cope with my loss. "},
+        {"from": 5, "to": 5, "text": "I could feel that a special sort of power lay within me, so I sought out those who could help me call it forth and master it. "},
+        {"from": 6, "to": 6, "text": "I was wild and undisciplined as a youngster, but then I realized the error of my ways. I applied to a monastery and became a monk as a way to live a life of discipline. "}
+        
+    ]
+}

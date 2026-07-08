@@ -1,0 +1,13 @@
+{
+    "title": "I became a cleric because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "A supernatural being in service to the gods called me to become a divine agent in the world. "},
+        {"from": 2, "to": 2, "text": "I saw the injustice and horror in the world and felt moved to take a stand against them. "},
+        {"from": 3, "to": 3, "text": "my god gave me an unmistakable sign. I dropped everything to serve the divine. "},
+        {"from": 4, "to": 4, "text": "though I was always devout, once I completed a pilgrimage that I knew my true calling. "},
+        {"from": 5, "to": 5, "text": "I used to serve in my religion’s bureaucracy but found I needed to work in the world, to bring the message of my faith to the darkest corners of the land. "},
+        {"from": 6, "to": 6, "text": "I realized that my god works through me, and I do as commanded, even though I don’t know why I was chosen to serve. "}
+        
+    ]
+}

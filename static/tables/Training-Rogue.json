@@ -1,0 +1,14 @@
+{
+    "title": "I became a rogue because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "I’ve always been nimble and quick of wit, so I decided to use those talents to help me make my way in the world. "},
+        {"from": 2, "to": 2, "text": "an assassin or a thief wronged me, so I focused my training on mastering the skills of my enemy to better combat foes of that sort. "},
+        {"from": 3, "to": 3, "text": "an experienced rogue saw something in me and taught me several useful tricks. "},
+        {"from": 4, "to": 4, "text": "I decided to turn my natural lucky streak into the basis of a career, though I still realize that improving my skills is essential. "},
+        {"from": 5, "to": 5, "text": "I took up with a group of ruffians who showed me how to get what I want through sneakiness rather than direct confrontation. "},
+        {"from": 6, "to": 6, "text": "I’m a sucker for a shiny bauble or a sack of coins, as long as I can get my hands on it without risking life and limb. "}
+        
+    ]
+}
+

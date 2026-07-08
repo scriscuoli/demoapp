@@ -1,0 +1,13 @@
+{
+    "title": "I became a barbarian because",
+    "roll" : "1d6",
+    "choices": [
+        {"from": 1, "to": 1, "text": "my devotion to my people lifted me in battle, making me powerful and dangerous. "},
+        {"from": 2, "to": 2, "text": "the spirits of my ancestors called on me to carry out a great task. "},
+        {"from": 3, "to": 3, "text": "I lost control in battle one day, and it was as if something else was manipulating my body, forcing it to kill every foe I could reach. "},
+        {"from": 4, "to": 4, "text": "I went on a spiritual journey to find myself and instead found a spirit animal to guide, protect, and inspire me. "},
+        {"from": 5, "to": 5, "text": "I was struck by lightning and lived. Afterward, I found a new strength within me that let me push beyond my limitations. "},
+        {"from": 6, "to": 6, "text": "my anger needed to be channeled into battle, or I risked becoming an indiscriminate killer. "}
+        
+    ]
+}
