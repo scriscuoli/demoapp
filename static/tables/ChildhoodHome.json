@@ -1,0 +1,16 @@
+{
+        "title": "Your childhood home was",
+        "roll": "1d100",
+        "table_mod": "LIFESTYLE",
+        "choices": [
+                {"from":-100, "to": 0, "text": "on the streets. "},
+                {"from":1, "to":20, "text": "a rundown shack. "},
+                {"from":21, "to": 30, "text": "nothing permanent, you moved around a lot. "},
+                {"from":31, "to": 40, "text": "<place> in the wilderness. ","place":["an encampment","a village"]},
+                {"from":41, "to": 50, "text": "an apartment in a rundown neighborhood. "},
+                {"from":51, "to": 70, "text": "a small house. "},
+                {"from":71, "to": 90, "text": "a large house. "},
+                {"from":91, "to": 110, "text": "a mansion. "},
+                {"from":111, "to": 500, "text": "a <big>. ","big": ["palace","castle"]}
+        ]
+}

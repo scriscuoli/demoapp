@@ -1,0 +1,13 @@
+{
+        "title": "Growing up your lifestyle was",
+        "roll": "3d6",
+        "choices": [
+                {"from":3, "to": 3, "text": "Wretched. ","vars": {"LIFESTYLE":-40}},
+                {"from":4, "to": 5, "text": "Squalid. ","vars": {"LIFESTYLE":-20}},
+                {"from":6, "to": 8, "text": "Poor. ", "vars": {"LIFESTYLE":-10}},
+                {"from":9, "to": 12, "text": "Modest. ","vars" : {"LIFESTYLE":0}},
+                {"from":13, "to": 15, "text": "Comfortable. ","vars": {"LIFESTYLE":10}},
+                {"from":16, "to": 17, "text": "Wealthy. ","vars": {"LIFESTYLE":20}},
+                {"from":18, "to": 18, "text": "Aristocratic. ","vars": {"LIFESTYLE":40}}
+        ]
+}

@@ -2,3 +2,5 @@ Parents
 Birthplace
 Siblings
 Family
+FamilyLifestyle
+ChildhoodHome
