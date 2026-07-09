@@ -1,6 +1,7 @@
 {
         "title": "Life Events:",
         "loop": "LIFE_EVENT_COUNT",
+        "unique": "true",
         "roll": "1d100",
         "choices": [
                 {"from":1, "to": 10, "text": "You suffered a tragedy.", "goto": "Tragedies"},

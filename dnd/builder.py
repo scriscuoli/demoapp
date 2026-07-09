@@ -89,20 +89,41 @@ class Builder:
         pattern = r'<(\w+)>'
         return re.sub(pattern, replace_match, entry["text"])
 
+    def get_unique_value(self, table):
+        unique = False
+        if "unique" in table:
+            unique = table['unique'].strip().lower() == "true"
+        return unique
+    
     def get_loop_value(self, table):
         rtn = 1
+        unique = False
         if "loop" in table:
             rtn = table['loop']
             if type(rtn) is str:
                 rtn = self.vars[rtn]
+            if "unique" in table:
+                unique = table['unique'].strip().lower() == "true"
         return rtn
+    def get_choice_hash(self,c):
+        rtn = f"{c['from']}{c['to']}"
+        return rtn
+    
+    def get_choice(self,table,myroll):
+        for c in table['choices']:
+            if c['from'] <= myroll and c['to'] >= myroll:
+                return c
+        return None
+
     
     def roll_table(self,tableName:str, params:dict):
         print(f"roll_table({tableName}, {params['race']}, {params['clazz']})")
         rtn = {"title":"","text":"","dice":{}}
         table = self.find_table(tableName,params['race'],params['clazz'])
+        
         if table != {} :
             table_mod_value = 0
+            previous = []
             
             if "table_mod" in table:
                 table_mod = table['table_mod']
@@ -110,16 +131,18 @@ class Builder:
                     table_mod_value = self.vars[table_mod]
             txt = ""
             loop = self.get_loop_value(table)
-            print(f"looping {loop}")
-            sep = ""
-            for i in range(1,loop+1):
-                txt = f"{txt}{sep}"
-                sep = "\n"
+            unique = self.get_unique_value(table)
+            print(f"looping {loop} {unique}")
+            
+            i = 0
+            while i < loop:
                 mydice = self.roll_dice(table['roll'])
                 myroll = mydice["total"] + table_mod_value
                 mydice["table_mod_value"] = table_mod_value
-                for c in table['choices']:
-                    if c['from'] <= myroll and c['to'] >= myroll:
+                c = self.get_choice(table,myroll)
+                if c != None:
+                    chash = self.get_choice_hash(c)
+                    if unique == False or chash not in previous:
                         ptxt = self.process_text(c)
                         if "vars" in c:
                             self.set_vars(c['vars'])
@@ -128,6 +151,8 @@ class Builder:
                             gtr = self.roll_table(tbl,params)
                             ptxt = f"{ptxt} {gtr['title']} {gtr['text']}"
                         txt = f"{txt}{ptxt}"
+                        i = i + 1
+                        previous.append(chash)
             rtn = {"title":table['title'],"text":txt,"dice":mydice}
         return rtn
 
