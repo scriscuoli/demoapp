@@ -15,7 +15,7 @@
                 {"from":81, "to": 85, "text": "You had a supernatural experience. "},
                 {"from":86, "to": 90, "text": "You fought in a battle. ","goto":"Battle"},
                 {"from":91, "to": 95, "text": "<crime>. ", "crime": ["You committed a crime","You were wrongly accused of a crime."],"goto":"Crime"},
-                {"from":96, "to": 99, "text": "You encountered something magical. "},
+                {"from":96, "to": 99, "text": "You encountered something magical. ","goto":"ArcaneMatters"},
                 {"from":100, "to": 100, "text": "Something truly strange happened to you.","goto":"WeirdStuff"}
         ]
 }

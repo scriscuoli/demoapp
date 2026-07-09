@@ -1,0 +1,15 @@
+{
+    "title": "",
+    "roll" : "1d10",
+    "choices": [
+        {"from": 1, "to": 1, "text": "You were <effect> by a spell. ", "effect":["charmed","frightened"]},
+        {"from": 2, "to": 2, "text": "You were injured by the effect of a spell. ", "goto":"Punishment"},
+        {"from": 3, "to": 3, "text": "You witnessed a powerful spell being cast by a <who>. ", "who":["cleric","druid","sorcerer","warlock","wizard"]},
+        {"from": 4, "to": 4, "text": "You drank a potion (of the DM’s choice)."},
+        {"from": 5, "to": 5, "text": "You found a spell scroll (of the DM’s choice) and succeeded in casting the spell it contained. "},
+        {"from": 6, "to": 6, "text": "You were affected by teleportation magic. "},
+        {"from": 7, "to": 7, "text": "You turned invisible for a time.. "},
+        {"from": 8, "to": 8, "text": "You identified an illusion for what it was."},
+        {"from": 9, "to": 10, "text": "You saw a creature being conjured by magic. "}
+    ]
+}
