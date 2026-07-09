@@ -5,7 +5,7 @@
         {"from": 1, "to": 3, "text": "You did not commit the crime and were exonerated after being accused. "},
         {"from": 4, "to": 6, "text": "You committed the crime or helped do so, but nonetheless the authorities found you not guilty. "},
         {"from": 7, "to": 8, "text": "You were nearly caught in the act. You had to flee and are wanted in the community where the crime occurred. "},
-        {"from": 9, "to": 12, "text": "You were caught and convicted. <where>. You served a sentence of <time> year(s) <after>. ",
+        {"from": 9, "to": 12, "text": "You were caught and convicted. <where> You served a sentence of <time> year(s) <after>. ",
                 "where":["You spent time in jail. ","You were chained to an oar. ", "You performed hard labor. "],
                 "time":"1d4",
                 "after":["and were then released.","before you escaped."]

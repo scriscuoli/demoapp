@@ -8,7 +8,7 @@
         {"from": 4, "to": 4, "text": "A dragon held you as a prisoner for <roll> month(s) until adventurers killed it. ","roll":"1d6"},
         {"from": 5, "to": 5, "text": "You were taken captive by a race of evil humanoids called the <humanoid>. You lived as a slave in the Underdark until you escaped.","humanoids": ["drow","kuo-toa","quaggoths"]},
         {"from": 6, "to": 6, "text": "You served a powerful adventurer as a hireling. You have only recently left that service. Use the supplemental tables and work with your DM to determine the basic details about your former employer."},
-        {"from": 7, "to": 7, "text": "You went insane for 1d6 years and recently regained your sanity. A tic or some other bit of odd behavior might linger."},
+        {"from": 7, "to": 7, "text": "You went insane for <roll> years and recently regained your sanity. A tic or some other bit of odd behavior might linger.","roll":"1d6"},
         {"from": 8, "to": 8, "text": "A lover of yours was secretly a silver dragon."},
         {"from": 9, "to": 9, "text": "You were captured by a cult and nearly sacrificed on an altar to the foul being the cultists served. You escaped, but you fear they will find you."},
         {"from": 10, "to": 10, "text": "You met <diety> and you lived to tell the tale.","diety":["a demigod","an archdevil","an archfey","a demon lord","a titan"]},

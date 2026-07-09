@@ -13,7 +13,7 @@
                 {"from":76, "to": 80, "text": "You went on an adventure. ","goto":"Adventures"},
                 {"from":81, "to": 85, "text": "You had a supernatural experience. "},
                 {"from":86, "to": 90, "text": "You fought in a battle. ","goto":"Battle"},
-                {"from":91, "to": 95, "text": "<crime>. ", "crime": ["You committed a crime","You were wrongly accused of a crime."]},
+                {"from":91, "to": 95, "text": "<crime>. ", "crime": ["You committed a crime","You were wrongly accused of a crime."],"goto":"Crime"},
                 {"from":96, "to": 99, "text": "You encountered something magical. "},
                 {"from":100, "to": 100, "text": "Something truly strange happened to you.","goto":"WeirdStuff"}
         ]

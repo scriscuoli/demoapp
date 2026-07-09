@@ -10,7 +10,7 @@
                 {"from":51, "to": 60, "text": "You lost something of sentimental value to you during your adventure. Remove one trinket from your possessions. "},
                 {"from":61, "to": 70, "text": "You were terribly frightened by something you encountered and ran away, abandoning your companions to their fate. "},
                 {"from":71, "to": 80, "text": "You learned a great deal during your adventure. The next time you make an ability check or a saving throw, you have advantage on the roll. "},
-                {"from":81, "to": 90, "text": "You found some treasure on your adventure. You have 2d6 gp left from your share of it. "},
+                {"from":81, "to": 90, "text": "You found some treasure on your adventure. You have <roll> gp left from your share of it. ","roll":"2d6"},
                 {"from":91, "to": 99, "text": "You found a considerable amount of treasure on your adventure. You have 1d20 + 50 gp left from your share of it. "},
                 {"from":100, "to": 100, "text": "You came across a common magic item (of the DM’s choice)." }
         ]
