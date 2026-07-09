@@ -39,11 +39,16 @@ class Builder:
 
     def set_vars(self, vars:dict):
         for key, value in vars.items():
+            if type(value) is str:
+                # check if it's a roll
+                match = re.fullmatch(r'(\d+)d(\d+)([+-]\d+)?', value.strip().lower())
+                if match:
+                    value = self.roll_dice(value)["total"]
+            print(f"vars[{key} = {value}]")
             self.vars[key] = value
 
     def roll_dice(self,notation:str):
       
-        
         match = re.fullmatch(r'(\d+)d(\d+)([+-]\d+)?', notation.strip().lower())
         if not match:
             raise ValueError(f"Invalid dice notation: {notation!r}")
@@ -84,30 +89,46 @@ class Builder:
         pattern = r'<(\w+)>'
         return re.sub(pattern, replace_match, entry["text"])
 
-
+    def get_loop_value(self, table):
+        rtn = 1
+        if "loop" in table:
+            rtn = table['loop']
+            if type(rtn) is str:
+                rtn = self.vars[rtn]
+        return rtn
+    
     def roll_table(self,tableName:str, params:dict):
         print(f"roll_table({tableName}, {params['race']}, {params['clazz']})")
         rtn = {"title":"","text":"","dice":{}}
         table = self.find_table(tableName,params['race'],params['clazz'])
         if table != {} :
             table_mod_value = 0
-            mydice = self.roll_dice(table['roll'])
+            
             if "table_mod" in table:
                 table_mod = table['table_mod']
                 if table_mod in self.vars:
                     table_mod_value = self.vars[table_mod]
-            myroll = mydice["total"] + table_mod_value
-            mydice["table_mod_value"] = table_mod_value
-            for c in table['choices']:
-                if c['from'] <= myroll and c['to'] >= myroll:
-                    txt = self.process_text(c)
-                    if "vars" in c:
-                        self.set_vars(c['vars'])
-                    if "goto" in c:
-                        tbl = c['goto']
-                        gtr = self.roll_table(tbl,params)
-                        txt = f"{txt} {gtr['title']} {gtr['text']}"
-                    rtn = {"title":table['title'],"text":txt,"dice":mydice}
+            txt = ""
+            loop = self.get_loop_value(table)
+            print(f"looping {loop}")
+            sep = ""
+            for i in range(1,loop+1):
+                txt = f"{txt}{sep}"
+                sep = "\n"
+                mydice = self.roll_dice(table['roll'])
+                myroll = mydice["total"] + table_mod_value
+                mydice["table_mod_value"] = table_mod_value
+                for c in table['choices']:
+                    if c['from'] <= myroll and c['to'] >= myroll:
+                        ptxt = self.process_text(c)
+                        if "vars" in c:
+                            self.set_vars(c['vars'])
+                        if "goto" in c:
+                            tbl = c['goto']
+                            gtr = self.roll_table(tbl,params)
+                            ptxt = f"{ptxt} {gtr['title']} {gtr['text']}"
+                        txt = f"{txt}{ptxt}"
+            rtn = {"title":table['title'],"text":txt,"dice":mydice}
         return rtn
 
 
@@ -120,5 +141,5 @@ class Builder:
         for m in manifest:
             rtn[m] = self.roll_table(m,params)
             
-
+        rtn['vars'] = self.vars
         return rtn

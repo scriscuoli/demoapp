@@ -1,0 +1,18 @@
+{
+    "title": "",
+    "roll" : "1d12",
+    "choices": [
+        {"from": 1, "to": 2, "text": "A family member or a close friend died. ","goto":"CauseOfDeath"},
+        {"from": 3, "to": 3, "text": "A friendship ended bitterly, and the other person is now hostile to you. The cause might have been a misunderstanding or something you or the former friend did. "},
+        {"from": 4, "to": 4, "text": "You lost all your possessions in a disaster, and you had to rebuild your life."},
+        {"from": 5, "to": 5, "text": "You were imprisoned for a crime you didn’t commit and spent <roll> year(s) at hard labor, <where>", "where": ["in jail","shackled to an oar in a slave galley. "],"roll":"1d6"},
+        {"from": 6, "to": 6, "text": "War ravaged your home community, reducing everything to rubble and ruin. In the aftermath, you either helped your town rebuild or moved somewhere else. "},
+        {"from": 7, "to": 7, "text": "A lover disappeared without a trace. You have been looking for that person ever since. "},
+        {"from": 8, "to": 8, "text": "A terrible blight in your home community caused crops to fail, and many starved. You lost a sibling or some other family member. "},
+        {"from": 9, "to": 9, "text": "You did something that brought terrible shame to you in the eyes of your family. You might have been involved in a scandal, dabbled in dark magic, or offended someone important. The attitude of your family members toward you becomes indifferent at best, though they might eventually forgive you."},
+        {"from": 10, "to": 10, "text": "For a reason you were never told, you were exiled from your community. <where>", "where": ["You then wandered in the wilderness for a time "," You promptly found a new place to live."]},
+        {"from": 11, "to": 11, "text": "A romantic relationship ended. <ended>", "ended": ["It ended with bad feelings","It ended amicably."]},
+        {"from": 12, "to": 12, "text": "A current or prospective romantic partner of yours died.","goto":"CauseOfDeath"}
+
+    ]
+}

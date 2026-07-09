@@ -1,0 +1,12 @@
+{
+        "title": "Your age: ",
+        "roll": "1d100",
+        "choices": [
+                {"from":1, "to": 20, "text": "You are not yet 20 years of age. ","vars": {"LIFE_EVENT_COUNT":1}},
+                {"from":21, "to": 59, "text": "You are <roll> years of age. ","roll": "1d10+20","vars": {"LIFE_EVENT_COUNT":"1d4"}},
+                {"from":60, "to": 69, "text": "You are <roll> years of age. ","roll": "1d10+30","vars": {"LIFE_EVENT_COUNT":"1d6"}},
+                {"from":70, "to": 89, "text": "You are <roll> years of age. ","roll": "1d10+40","vars": {"LIFE_EVENT_COUNT":"1d8"}},
+                {"from":90, "to": 99, "text": "You are <roll> years of age. ","roll": "1d10+50","vars": {"LIFE_EVENT_COUNT":"1d10"}},
+                {"from":100, "to": 100, "text": "You are over 60 years of age. ","vars": {"LIFE_EVENT_COUNT":"1d12"}}
+        ]
+}

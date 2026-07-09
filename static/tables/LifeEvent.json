@@ -1,0 +1,20 @@
+{
+        "title": "Life Events:",
+        "loop": "LIFE_EVENT_COUNT",
+        "roll": "1d100",
+        "choices": [
+                {"from":1, "to": 10, "text": "You suffered a tragedy.", "goto": "Tragedies"},
+                {"from":11, "to": 20, "text": "You gained a bit of good fortune.  ","goto": "Boons"},
+                {"from":21, "to": 30, "text": "<love>. " ,"love": ["You fell in love and got married.","You fell in love and together had a child"]},
+                {"from":31, "to": 40, "text": "You made an enemy of an adventurer. <blame>. ", "blame": ["You are to blame for the rift","It was't your fault"]},
+                {"from":41, "to": 50, "text": "You made a friend of an adventurer."},
+                {"from":51, "to": 70, "text": "You spent time working in a job related to your background. Start the game with an extra <gold> gp. ","gold":"2d6"},
+                {"from":71, "to": 75, "text": "You met someone important. "},
+                {"from":76, "to": 80, "text": "You went on an adventure. ","goto":"Adventures"},
+                {"from":81, "to": 85, "text": "You had a supernatural experience. "},
+                {"from":86, "to": 90, "text": "You fought in a battle. ","goto":"Battle"},
+                {"from":91, "to": 95, "text": "<crime>. ", "crime": ["You committed a crime","You were wrongly accused of a crime."]},
+                {"from":96, "to": 99, "text": "You encountered something magical. "},
+                {"from":100, "to": 100, "text": "Something truly strange happened to you.","goto":"WeirdStuff"}
+        ]
+}

@@ -1,0 +1,14 @@
+{
+    "title": "Battle Outcome: ",
+    "roll" : "1d12",
+    "choices": [
+        {"from": 1, "to": 1, "text": "You were knocked out and left for dead. You woke up <roll> hours later with no recollection of the battle. ","roll":"1d4"},
+        {"from": 2, "to": 3, "text": "You were badly injured in the fight, and you still bear the awful scars of those wounds. "},
+        {"from": 4, "to": 4, "text": "You ran away from the battle to save your life, but you still feel shame for your cowardice. "},
+        {"from": 5, "to": 7, "text": "You suffered only minor injuries, and the wounds all healed without leaving scars. "},
+        {"from": 8, "to": 9, "text": "You survived the battle, but you suffer from terrible nightmares in which you relive the experience. "},
+        {"from": 10, "to": 11, "text": "You escaped the battle unscathed, though many of your friends were injured or lost. "},
+        {"from": 12, "to": 12, "text": "You acquitted yourself well in battle and are remembered as a hero. You might have received a medal for your bravery."}
+    ]
+}
+

@@ -20,12 +20,12 @@
     </form>
 
     <h4>{{ backstory['title'] }}</h4>
-    <pre>
+    <ul>
         {% if backstory != {} %}
             {% for key in manifest %}
-                {{ backstory[key]['title']}} {{backstory[key]['text']}}
+                <li>{{ backstory[key]['title']}} {{backstory[key]['text']}}</li>
             {% endfor %}
         {% endif %}
-    </pre>
+    </ul>
 
 {% endblock %}

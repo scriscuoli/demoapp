@@ -1,0 +1,16 @@
+{
+    "title": "The crime was",
+    "roll" : "1d8",
+    "choices": [
+        {"from": 1, "to": 1, "text": "Murder. ", "goto":"Punishment"},
+        {"from": 2, "to": 2, "text": "Theft. ", "goto":"Punishment"},
+        {"from": 3, "to": 3, "text": "Burglary. ", "goto":"Punishment"},
+        {"from": 4, "to": 4, "text": "Assault. ", "goto":"Punishment"},
+        {"from": 5, "to": 5, "text": "Smuggling. ", "goto":"Punishment"},
+        {"from": 6, "to": 6, "text": "Kidnapping. ", "goto":"Punishment"},
+        {"from": 7, "to": 7, "text": "Extortion. ", "goto":"Punishment"},
+        {"from": 8, "to": 8, "text": "Counterfeiting. ", "goto":"Punishment"}
+        
+    ]
+}
+
