@@ -31,9 +31,10 @@ def show_dnd():
         race = request.form.get("race")
         clazz = request.form.get("clazz")
         cha = request.form.get("cha")
+        wis = request.form.get("wis")
 
         print(f"race={race}  class={clazz}")
-        params = {"race":race, "clazz": clazz, "cha": cha}
+        params = {"race":race, "clazz": clazz, "cha": cha, "wis":wis}
         backstory = builder.build_back_story(params)
         print(manifest)
         print(backstory)

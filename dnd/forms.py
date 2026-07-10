@@ -38,4 +38,8 @@ class BackstoryForm(FlaskForm):
         InputRequired(message="This field is required."),
         NumberRange(min=-5, max=30, message="Charisma modifier should be between -5 and 30.")
     ])
+    wis = IntegerField('WIS Modifier', validators=[
+        InputRequired(message="This field is required."),
+        NumberRange(min=-5, max=30, message="Wisdom modifier should be between -5 and 30.")
+    ])
     submit = SubmitField('Submit')

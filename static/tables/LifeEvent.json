@@ -12,7 +12,7 @@
                 {"from":51, "to": 70, "text": "You spent time working in a job related to your background. Start the game with an extra <gold> gp. ","gold":"2d6"},
                 {"from":71, "to": 75, "text": "You met someone important. "},
                 {"from":76, "to": 80, "text": "You went on an adventure. ","goto":"Adventures"},
-                {"from":81, "to": 85, "text": "You had a supernatural experience. "},
+                {"from":81, "to": 85, "text": "You had a supernatural experience. ","goto":"SupernaturalEvent"},
                 {"from":86, "to": 90, "text": "You fought in a battle. ","goto":"Battle"},
                 {"from":91, "to": 95, "text": "<crime>. ", "crime": ["You committed a crime","You were wrongly accused of a crime."],"goto":"Crime"},
                 {"from":96, "to": 99, "text": "You encountered something magical. ","goto":"ArcaneMatters"},

@@ -1,0 +1,22 @@
+{
+    "title": "They",
+    "roll" : "1d12",
+    "choices": [
+        {"from": 1, "to": 5, "text": "You were ensorcelled by a fey and enslaved for 1d6 years before you escaped."},
+        {"from": 6, "to": 10, "text": "You saw a demon and ran away before it could do anything to you."},
+        {"from": 11, "to": 15, "text": "A devil tempted you. ","goto":"Devil"},
+        {"from": 16, "to": 20, "text": "You woke up one morning miles from your home, with no idea how you got there."},
+        {"from": 21, "to": 30, "text": "You visited a holy site and felt the presence of the divine there."},
+        {"from": 31, "to": 40, "text": "You witnessed a falling red star, a face appearing in the frost, or some other bizarre happening. You are certain that it was an omen of some sort."},
+        {"from": 41, "to": 50, "text": "You escaped certain death and believe it was the intervention of a god that saved you."},
+        {"from": 51, "to": 60, "text": "You witnessed a minor miracle."},
+        {"from": 61, "to": 70, "text": "You explored an empty house and found it to be haunted."},
+        {"from": 71, "to": 75, "text": "You were briefly possessed. Roll a d6 to determine what type of creature possessed you: 1, celestial; 2, devil; 3, demon; 4, fey; 5, elemental; 6, undead."},
+        {"from": 76, "to": 80, "text": "You saw a ghost."},
+        {"from": 81, "to": 85, "text": "You saw a ghoul feeding on a corpse."},
+        {"from": 86, "to": 90, "text": "A celestial or a fiend visited you in your dreams to give a warning of dangers to come."},
+        {"from": 91, "to": 95, "text": "You briefly visited the Feywild or the Shadowfell."},
+        {"from": 96, "to": 100, "text": "You saw a portal that you believe leads to another plane of existence."}
+        
+    ]
+}

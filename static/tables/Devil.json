@@ -1,0 +1,9 @@
+{
+    "title": "",
+    "roll" : "1d20",
+    "table_mod": "WIS",
+    "choices": [
+        {"from": -20, "to": 10, "text": "You succombed to temptation. "},
+        {"from": 11, "to": 300, "text": "You resisted temptation and received <gold>gp. ","gold":"1d20+50"}
+    ]
+}

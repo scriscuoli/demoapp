@@ -30,21 +30,29 @@ class Builder:
             fn = os.path.join(self.TABLES_FOLDER,c)
             pfn = Path(fn)
             if pfn.is_file():
-                print(f"found table file {fn}")
+                #print(f"found table file {fn}")
                 with open(fn, 'r', encoding='utf-8') as file:
                     data_dict = json.load(file)
                     return data_dict
-        print(f"found no matches for {title} {race} {clazz}")
+        #print(f"found no matches for {title} {race} {clazz}")
+        return rtn
+    
+    def is_die_roll(self,s):
+        rtn = False
+        if type(s) is str:
+            match = re.fullmatch(r'(\d+)d(\d+)([+-]\d+)?', s.strip().lower())
+            if match != None:
+                rtn = True
         return rtn
 
     def set_vars(self, vars:dict):
         for key, value in vars.items():
             if type(value) is str:
                 # check if it's a roll
-                match = re.fullmatch(r'(\d+)d(\d+)([+-]\d+)?', value.strip().lower())
-                if match:
+                #match = re.fullmatch(r'(\d+)d(\d+)([+-]\d+)?', value.strip().lower())
+                if self.is_die_roll(value):
                     value = self.roll_dice(value)["total"]
-            print(f"vars[{key} = {value}]")
+            #print(f"vars[{key} = {value}]")
             self.vars[key] = value
 
     def roll_dice(self,notation:str):
@@ -67,7 +75,7 @@ class Builder:
             "modifier": modifier,
             "notation": notation
         }
-        print(f"my roll {rtn['total']}")
+        #print(f"my roll {rtn['total']}")
         return rtn
 
     def randrom_select_from_list(self,mylist:list):
@@ -80,7 +88,8 @@ class Builder:
             keyword = match.group(1)
             if keyword in entry:
                 value = entry[keyword]
-                if isinstance(value, str) and re.fullmatch(r'\d*d\d+([+-]\d+)?', value):
+                #if isinstance(value, str) and re.fullmatch(r'\d*d\d+([+-]\d+)?', value):
+                if isinstance(value,str) and self.is_die_roll(value):
                     value = self.roll_dice(value)['total']
                 elif type(value) is list:
                     value = self.randrom_select_from_list(value)
@@ -97,13 +106,10 @@ class Builder:
     
     def get_loop_value(self, table):
         rtn = 1
-        unique = False
         if "loop" in table:
             rtn = table['loop']
             if type(rtn) is str:
                 rtn = self.vars[rtn]
-            if "unique" in table:
-                unique = table['unique'].strip().lower() == "true"
         return rtn
     def get_choice_hash(self,c):
         rtn = f"{c['from']}{c['to']}"
@@ -116,8 +122,8 @@ class Builder:
         return None
 
     
-    def roll_table(self,tableName:str, params:dict):
-        print(f"roll_table({tableName}, {params['race']}, {params['clazz']})")
+    def roll_table(self,tableName:str, params:dict, override = None):
+        #print(f"roll_table({tableName}, {params['race']}, {params['clazz']})")
         rtn = {"title":"","text":"","dice":{}}
         table = self.find_table(tableName,params['race'],params['clazz'])
         
@@ -132,13 +138,29 @@ class Builder:
             txt = ""
             loop = self.get_loop_value(table)
             unique = self.get_unique_value(table)
-            print(f"looping {loop} {unique}")
+            #print(f"looping {loop} {unique}")
+            if override != None:
+                if self.is_die_roll(override):
+                    loop = self.roll_dice(override)
+                else:
+                    loop = int(override)
+                #print(f"Override changes loop to {loop}")
             
             i = 0
             while i < loop:
                 mydice = self.roll_dice(table['roll'])
                 myroll = mydice["total"] + table_mod_value
                 mydice["table_mod_value"] = table_mod_value
+
+                #debugging
+                
+                #print(f"tableName={tableName} i={i}")
+                #if tableName == "SupernaturalEvent" and i == 0:
+                #    myroll = 12
+                #if tableName == "LifeEvent" and i == 0:
+                #    myroll = 82
+                
+
                 c = self.get_choice(table,myroll)
                 if c != None:
                     chash = self.get_choice_hash(c)
@@ -147,8 +169,11 @@ class Builder:
                         if "vars" in c:
                             self.set_vars(c['vars'])
                         if "goto" in c:
+                            o = None
+                            if "override" in c:
+                                o = int(c['override'])
                             tbl = c['goto']
-                            gtr = self.roll_table(tbl,params)
+                            gtr = self.roll_table(tbl,params,o)
                             ptxt = f"{ptxt} {gtr['title']} {gtr['text']}"
                         txt = f"{txt}{ptxt}"
                         i = i + 1
@@ -162,6 +187,7 @@ class Builder:
         rtn = {}
         rtn['title'] = f"The back story of your {params['race']} {params['clazz']}"
         self.vars["CHA"] = int(params['cha'])
+        self.vars["WIS"] = int(params['wis'])
         manifest = self.get_manifest()
         for m in manifest:
             rtn[m] = self.roll_table(m,params)

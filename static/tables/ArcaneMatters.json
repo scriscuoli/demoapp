@@ -10,6 +10,7 @@
         {"from": 6, "to": 6, "text": "You were affected by teleportation magic. "},
         {"from": 7, "to": 7, "text": "You turned invisible for a time.. "},
         {"from": 8, "to": 8, "text": "You identified an illusion for what it was."},
-        {"from": 9, "to": 10, "text": "You saw a creature being conjured by magic. "}
+        {"from": 9, "to": 9, "text": "You saw a creature being conjured by magic. "},
+        {"from": 10, "to": 10, "text": "Your fortune was read by a diviner. This is what she saw. ","override":2,"goto":"LifeEvent"}
     ]
 }
