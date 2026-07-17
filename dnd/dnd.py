@@ -5,8 +5,6 @@ from pathlib import Path
 from dnd.forms import BackstoryForm
 from dnd.builder import Builder
 
-
-
 dnd_bp = Blueprint('dnd_bp', __name__,
                      template_folder='templates',
                      static_url_path='dnd')

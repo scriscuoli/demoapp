@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h5>Magic 6174</h5>
+
+    <form action="" method="POST">
+        
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.numberPicked.label }} {{ form.numberPicked() }}
+        </p>
+        <p>
+            {{ form.submit() }} <br>
+        </p>
+    </form>
+
+    <h4>Results for {{ numberPicked }}</h4>
+    <table class="table table-bordered w-auto">
+        <thead>
+            <tr>
+                <th>Min</th><th>Max</th><th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in results %}
+            <tr><td>{{r.vmin}}</td><td>{{r.vmax}}</td><td {% if r.num == 6174 %}style="color: red;"{% endif %}>{{ r.num }}</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
