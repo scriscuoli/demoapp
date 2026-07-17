@@ -11,8 +11,9 @@
         Min = your four digit number (with leading zeros as necessary) with its digits in ascending order</br>
         Max = your four digit number (with leading zeros as necessary) with its digits in descending order</br>
         The next number in the sequence is the result of substracting Min from Max.</br>
-        The process repeats (no more than 7 times) until 6174 is reached.</br>
+        The process repeats (no more than 7 times) until 6174 is reached.</br></br>
     </div>
+    <div>
     <form action="" method="POST">
         
         {{ form.hidden_tag() }}
@@ -23,7 +24,7 @@
             {{ form.submit() }} <br>
         </p>
     </form>
-
+    </div>
     <h4>Results for {{ numberPicked }}</h4>
     <table class="table table-bordered w-auto">
         <thead>
