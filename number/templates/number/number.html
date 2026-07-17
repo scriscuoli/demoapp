@@ -7,6 +7,11 @@
         If you apply a specific set of rules called Kaprekar's Routine, every <br/>
         four-digit number (as long as it has at least two unique digits) <br/>
         will eventually collapse into 6174 within seven steps.<br/>
+        <br/>
+        Min = your four digit number (with leading zeros as necessary) with its digits in ascending order</br>
+        Max = your four digit number (with leading zeros as necessary) with its digits in descending order</br>
+        The next number in the sequence is the result of substracting Min from Max.</br>
+        The process repeats (no more than 7 times) until 6174 is reached.</br>
     </div>
     <form action="" method="POST">
         
@@ -23,12 +28,12 @@
     <table class="table table-bordered w-auto">
         <thead>
             <tr>
-                <th>Min</th><th>Max</th><th>Number</th>
+                <th>Max</th><th>minus</th><th>Min</th><th>becomes</th><th>The Next Number</th>
             </tr>
         </thead>
         <tbody>
             {% for r in results %}
-            <tr><td>{{r.vmin}}</td><td>{{r.vmax}}</td><td {% if r.num == 6174 %}style="color: red;"{% endif %}>{{ r.num }}</td></tr>
+            <tr><td>{{r.vmax}}</td><td>-</td><td>{{r.vmin}}</td><td>=</td></td></tf><td {% if r.num == 6174 %}style="color: red;"{% endif %}>{{ r.num }}</td></tr>
             {% endfor %}
         </tbody>
     </table>
